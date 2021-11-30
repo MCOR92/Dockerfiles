@@ -1,17 +1,9 @@
-#Mkdir centos #make directory 
+FROM centos:7
+MAINTAINER NAME EMAIL
 
-#cd centos #go into directory
+RUN yum makecache
+RUN yum upgrade -y
+RUN yum install -y httpd
 
-#vim Dockerfile #edit file so you can add below into the file, this is the code you want in the dockerfile.
-
- FROM centos:7
- MAINTAINER NAME EMAIL
- 
- RUN yum makecache
- RUN yum upgrade -y
- RUN yum install -y httpd
-
-#save the file
-#build the image with the cmd: podman build -t "secdev:Dockerfile" .
 
 
